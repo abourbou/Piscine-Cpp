@@ -6,20 +6,14 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/21 21:05:42 by abourbou          #+#    #+#             */
-/*   Updated: 2021/01/24 10:55:29 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/01/24 16:13:07 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <stdio.h>
-#include <limits>
-#include <string>
-#include "ClassContact.hpp"
+#include "phone_book.hpp"
 
 void	add_user(contact *new_contact, int index)
 {
-	int		phone_number;
-
 	std::cout << "New contact is being added" << std::endl;
 
 	new_contact->index = index;
@@ -66,29 +60,46 @@ void	add_user(contact *new_contact, int index)
 	
 	std::cout << "Contact validated" << std::endl << std::endl;
 }
-/*
-void		put_10_width(char *)
 
 void		search_user(contact contact_list[8], int index)
 {
 	int		i;
-	size_t	size;
+	int		index_cont;
 
 	i = 0;
+	if (!index)
+	{
+		std::cout << "No contact" << std::endl;
+		return ;
+	}
+	put_10_width("index");
+	std::cout << "|";
+	put_10_width("first name");
+	std::cout << "|";
+	put_10_width("last_name");
+	std::cout << "|";
+	put_10_width("nickname");
+	std::cout << std::endl;
 	while (i < index)
 	{
-		size = contact_list[i].first_name.size;
-		if (size > 10)
-		{
-			std::cout.write(contact_list[i].first_name, 9);
-			std::cout << ".|";
-		}
-		else
-		{
-
-		}
+		std::cout <<  "         " << i + 1 << "|";
+		put_10_width(contact_list[i].first_name);
+		std::cout << "|";
+		put_10_width(contact_list[i].last_name);
+		std::cout << "|";
+		put_10_width(contact_list[i].nickname);
+		std::cout << std::endl;
+		i++;
 	}
-}*/
+	std::cout << "Pls enter the index of the needed contact" << std::endl;
+	std::cin >> index_cont;
+	while (index_cont < 1 || index_cont > 8)
+	{
+		std::cout << "Index not found, pls try again";
+		std::cin >> index_cont;
+	}
+	display_user(&contact_list[index_cont - 1]);
+}
 
 int		main(void)
 {
@@ -118,7 +129,8 @@ int		main(void)
 		}
 		else if (!buffer.compare("SEARCH"))
 		{
-			std::cout << "SEARCH" << std::endl;
+			//std::cout << "SEARCH" << std::endl;
+			search_user(contact_list, index);
 		}
 		else if (!buffer.compare("EXIT"))
 			exit = 1;

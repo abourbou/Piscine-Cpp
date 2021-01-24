@@ -1,16 +1,16 @@
 
-NAME		:		megaphone
+NAME		=		megaphone
 
-CC			:		clang++
+CC			=		clang++
 
-FLAGS		:		-Wall -Werror -Wextra
+FLAGS		=		-Wall -Werror -Wextra
 
-SRC			:		megaphone.cpp
+SRC			=		megaphone.cpp
 
-all			:		NAME
+all			:		$(NAME)
 
 $(NAME)		:
-					$(CC) $(FLAGS) -o $(NAME)
+					$(CC) $(FLAGS) $(SRC) -o $(NAME)
 
 fclean		:
-					rm -rf megaphone
+					rm -rf $(NAME)
