@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.class.cpp                                  :+:      :+:    :+:   */
+/*   Sample.class.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/21 21:29:28 by abourbou          #+#    #+#             */
-/*   Updated: 2021/01/21 22:08:20 by abourbou         ###   ########lyon.fr   */
+/*   Created: 2021/01/23 18:23:04 by abourbou          #+#    #+#             */
+/*   Updated: 2021/01/23 20:13:46 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "contact.class.hpp"
+#ifndef SAMPLE_CLASS_HPP
+# define SAMPLE_CLASS_HPP
 
-contact::contact(void)
+class Sample
 {
-	return ;
-}
 
-contact::~contact(void)
-{
-	return ;
-}
+public:
+
+	float const pi;
+	int			qd;
+
+	Sample(float const f );
+	~Sample(void);
+
+	void	bar(void) const;
+};
+
+#endif
