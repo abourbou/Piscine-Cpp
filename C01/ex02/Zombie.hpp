@@ -6,7 +6,7 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 18:44:34 by abourbou          #+#    #+#             */
-/*   Updated: 2021/01/26 18:57:50 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/01/27 18:36:24 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@ class Zombie
 		std::string const	type;
 		std::string	const	name;
 
-		Zombie(std::string const the_type, std::string const the_name) : type(the_type), name(the_name)
-		{
-		}
+		Zombie(std::string const the_type, std::string const the_name) : type(the_type), name(the_name){}
 		~Zombie(){}
 	
 		void	annonce(void);
