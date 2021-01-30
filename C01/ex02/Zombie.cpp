@@ -6,13 +6,13 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 18:43:44 by abourbou          #+#    #+#             */
-/*   Updated: 2021/01/27 18:34:26 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/01/30 21:45:38 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-void	Zombie::annonce(void)
+void	Zombie::annonce(void) const
 {
 	std::cout << "<" << this->name << " (" << this->type;
 	std::cout << ")>" << " Braiiiiiinnnssss ... " << std::endl;

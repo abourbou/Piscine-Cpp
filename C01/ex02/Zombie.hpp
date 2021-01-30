@@ -6,7 +6,7 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 18:44:34 by abourbou          #+#    #+#             */
-/*   Updated: 2021/01/30 17:42:29 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/01/30 21:45:29 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ class Zombie
 		{}
 		~Zombie(){}
 	
-		void	annonce(void);
+		void	annonce(void) const;
 };

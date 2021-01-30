@@ -6,7 +6,7 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 17:54:10 by abourbou          #+#    #+#             */
-/*   Updated: 2021/01/30 18:31:34 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/01/30 21:48:10 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ ZombieHorde::ZombieHorde(unsigned int number_zombie, std::string type)
 	}
 }
 
-void	ZombieHorde::annonce(void)
+void	ZombieHorde::annonce(void) const
 {
 	unsigned int	i;
 
