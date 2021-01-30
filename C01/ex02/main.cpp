@@ -6,7 +6,7 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 17:54:24 by abourbou          #+#    #+#             */
-/*   Updated: 2021/01/27 18:50:22 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/01/30 17:51:33 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,10 @@ std::string		randomName(void)
 Zombie	*randomChump(void)
 {
 	std::string		name;
+	Zombie			*new_zombie;
 	
 	name = randomName();
-	Zombie	*new_zombie = new Zombie("random chump", name);
+	new_zombie = new Zombie("random chump", name);
 	new_zombie->annonce();
 	return (new_zombie);
 }
@@ -47,12 +48,12 @@ Zombie	*randomChump(void)
 int	main(void)
 {
 	Zombie	first("quick", "Alphonse");
-	ZombieEvent	attack("normal");
 	
 	first.annonce();
-	
 	Zombie *some = randomChump();
 	delete some;
+
+	ZombieEvent	attack("normal");
 	some = attack.newZombie("Albert");
 	some->annonce();
 	delete some;

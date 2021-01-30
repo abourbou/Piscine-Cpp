@@ -6,7 +6,7 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 18:56:26 by abourbou          #+#    #+#             */
-/*   Updated: 2021/01/27 18:48:19 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/01/30 17:51:11 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class ZombieEvent
 		Zombie		*newZombie(std::string name);
 
 		ZombieEvent(std::string default_type);
-		~ZombieEvent(){};
+		~ZombieEvent(){}
 	private:
 		std::string	_type;
 };
