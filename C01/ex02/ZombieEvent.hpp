@@ -6,11 +6,13 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 18:56:26 by abourbou          #+#    #+#             */
-/*   Updated: 2021/01/30 21:46:18 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/01/31 20:06:52 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef ZOMBIEEVENT_HPP
+# define ZOMBIEEVENT_HPP
+# include "Zombie.hpp"
 
 class ZombieEvent
 {
@@ -24,3 +26,5 @@ class ZombieEvent
 	private:
 		std::string	_type;
 };
+
+#endif

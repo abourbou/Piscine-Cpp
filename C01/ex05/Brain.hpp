@@ -6,10 +6,12 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 20:01:21 by abourbou          #+#    #+#             */
-/*   Updated: 2021/01/30 21:08:24 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/01/31 20:08:21 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 #include <iostream>
 
 class	Brain
@@ -20,3 +22,5 @@ class	Brain
 		Brain(){}
 		~Brain(){}
 };
+
+#endif

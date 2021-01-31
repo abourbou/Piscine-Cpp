@@ -6,11 +6,12 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 20:58:50 by abourbou          #+#    #+#             */
-/*   Updated: 2021/01/30 21:12:46 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/01/31 20:08:44 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
+# define HUMAN_HPP
+# include "Brain.hpp"
 
 class	Human
 {
@@ -22,3 +23,5 @@ class	Human
 		Brain const _my_brain;
 
 };
+
+#endif

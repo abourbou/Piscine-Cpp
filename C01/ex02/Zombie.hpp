@@ -6,12 +6,14 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 18:44:34 by abourbou          #+#    #+#             */
-/*   Updated: 2021/01/30 21:45:29 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/01/31 20:06:19 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-#include <iostream>
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
+# include <string>
+# include <iostream>
 
 class Zombie
 {
@@ -25,3 +27,5 @@ class Zombie
 	
 		void	annonce(void) const;
 };
+
+#endif

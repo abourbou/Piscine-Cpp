@@ -6,11 +6,13 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 21:37:27 by abourbou          #+#    #+#             */
-/*   Updated: 2021/01/30 21:44:51 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/01/31 20:09:16 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
+# include <string>
 
 class	Weapon
 {
@@ -21,3 +23,5 @@ class	Weapon
 	private:
 		std::string	_type;
 };
+
+#endif
