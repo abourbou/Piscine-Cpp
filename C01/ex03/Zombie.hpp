@@ -6,10 +6,11 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 18:44:34 by abourbou          #+#    #+#             */
-/*   Updated: 2021/01/31 20:07:18 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/02/02 21:05:51 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef ZOMBIE_HPP
 # define ZOMBIE_HPP
 # include <string>
 # include <iostream>
