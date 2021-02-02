@@ -3,9 +3,9 @@ NAME		=	replace
 
 CC			=	clang++
 
-FLAGS		=	-Wall -Werror -Wextra
+FLAGS		=	-Wall -Wextra
 
-SRC			=	main.c
+SRC			=	main.cpp
 
 all			:	$(NAME)
 
@@ -14,3 +14,6 @@ $(NAME)		:
 
 fclean		:
 				rm -rf $(NAME)
+				rm -rf *.replace
+
+re			:	fclean all
