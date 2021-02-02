@@ -6,13 +6,13 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 16:07:06 by abourbou          #+#    #+#             */
-/*   Updated: 2021/01/24 16:10:41 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/02/02 20:50:06 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
 #include <iostream>
-#include "ClassContact.hpp"
+#include "Contact.hpp"
 
 void		put_10_width(std::string	str)
 {

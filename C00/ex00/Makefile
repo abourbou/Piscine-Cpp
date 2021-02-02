@@ -7,10 +7,18 @@ FLAGS		=		-Wall -Werror -Wextra
 
 SRC			=		megaphone.cpp
 
+OBJ			=		$(SRC:.cpp=.o)
+
 all			:		$(NAME)
 
-$(NAME)		:
-					$(CC) $(FLAGS) $(SRC) -o $(NAME)
+$(NAME)		:		$(OBJ)
+					$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
-fclean		:
+%.o			:		%.c
+					$(CC) $(FLAGS) -c $< -o $@
+
+clean		:
+					rm -rf *.o
+
+fclean		:		clean
 					rm -rf $(NAME)

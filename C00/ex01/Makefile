@@ -5,14 +5,22 @@ CC			=	clang++
 
 FLAGS		=	-Wall -Werror -Wextra
 
-SRC			=	ClassContact.cpp phone_book.cpp tools.cpp
+SRC			=	Contact.cpp phone_book.cpp tools.cpp
 
-INC			=	ClassContact.hpp phone_book.hpp
+OBJ			=	$(SRC:.cpp=.o)
+
+INC			=	Contact.hpp phone_book.hpp
 
 all			:	$(NAME)
 
-$(NAME)		:
+$(NAME)		:	$(OBJ) $(INC)
 				$(CC) $(FLAGS) $(SRC) -o $(NAME)
 
-fclean		:
+%.o			:	%.cpp $(INC)
+				$(CC) $(FLAGS) -c $< -o $@
+
+clean		:
+				rm -rf *.o
+
+fclean		:	clean
 				rm -rf $(NAME)
