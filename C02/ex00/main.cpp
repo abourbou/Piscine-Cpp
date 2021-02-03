@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/03 21:34:04 by abourbou          #+#    #+#             */
-/*   Updated: 2021/02/03 21:58:19 by abourbou         ###   ########lyon.fr   */
+/*   Created: 2021/02/03 21:53:20 by abourbou          #+#    #+#             */
+/*   Updated: 2021/02/03 21:54:39 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#include "Fixed.hpp"
+#include <iostream>
 
-class Fixed
+int		main(void)
 {
-	private:
-		int					_point_value;
-		static const int	_width = 8;
+	Fixed	a;
+	Fixed	b(a);
+	Fixed	c;
 
-	public:
-		Fixed(void);
-		Fixed(Fixed const &cpy);
-		~Fixed(void);
+	c = b;
 
-		void	operator=(Fixed const &cpy);
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
 
-		int		getRawBits(void) const;
-		void	setRawBits(int const raw);
-};
-
-#endif
+	return (0);
+}
