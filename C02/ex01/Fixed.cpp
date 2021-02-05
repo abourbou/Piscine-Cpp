@@ -6,7 +6,7 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 21:36:12 by abourbou          #+#    #+#             */
-/*   Updated: 2021/02/04 22:55:31 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/02/05 08:07:55 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Fixed::Fixed(int const integer) : _value(integer << _width)
 	std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed(float const floated) : _value(roundf(floated * 256.0))
+Fixed::Fixed(float const floated) : _value(roundf(floated * (float)(1 << _width)))
 {
 	std::cout << "Float constructor called" << std::endl;
 }
@@ -61,7 +61,7 @@ void	Fixed::setRawBits(int const raw)
 
 float	Fixed::toFloat(void) const
 {
-	return ((float)_value / 256.0);
+	return ((float)_value / (float)(1 << _width));
 }
 
 int		Fixed::toInt(void) const
