@@ -6,7 +6,7 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 11:14:05 by abourbou          #+#    #+#             */
-/*   Updated: 2021/02/16 11:37:24 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/02/16 17:46:58 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ ClapTrap::~ClapTrap(void)
 	std::cout << "Destructor ClapTrap " << this->name << " called" << std::endl;
 }
 
-void	ClapTrap::rangedAttack(std::string const & target)
+void	ClapTrap::rangedAttack(std::string const & target) const
 {
 	std::cout << "CL4P-TP " << this->name << " attacks " << target;
 	std::cout << " at range, causing " << this->range_attack_dmg;
 	std::cout << " points of dammage!" << std::endl;
 }
 
-void	ClapTrap::meleeAttack(std::string const & target)
+void	ClapTrap::meleeAttack(std::string const & target) const
 {
 	std::cout << "CL4P-TP " << this->name << " attacks " << target;
 	std::cout << " at cac, causing " << this->melee_attack_dmg;

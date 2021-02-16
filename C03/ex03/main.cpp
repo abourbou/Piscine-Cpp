@@ -6,12 +6,13 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 10:22:39 by abourbou          #+#    #+#             */
-/*   Updated: 2021/02/16 11:03:17 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/02/16 18:04:50 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
+#include "NinjaTrap.hpp"
 
 int		main(void)
 {
@@ -52,5 +53,26 @@ int		main(void)
 	Opener.challengeNewComer("Charles-Henry-François");
 	Opener.challengeNewComer("Charles-Henry-François");
 
+	std::cout << std::endl << std::endl;
 
-}
+	NinjaTrap	Ninja("Sasuke");
+
+	Ninja.meleeAttack("Charles");
+	Ninja.rangedAttack("Charles-Henry");
+
+	Ninja.takeDamage(20);
+	Ninja.takeDamage(1000);
+	Ninja.takeDamage(1000);
+
+	Ninja.beRepaired(30);
+	Ninja.beRepaired(150);
+	Ninja.beRepaired(150);
+
+	ClapTrap	Clap(150, 150, 25, 25, 1, "Rust", 30, 10, 10);
+	NinjaTrap	Clone("Naruto");
+
+	Ninja.NinjaShoebox(Clap);
+	Ninja.NinjaShoebox(Robot);
+	Ninja.NinjaShoebox(Opener);
+	Ninja.NinjaShoebox(Clone);
+}	
