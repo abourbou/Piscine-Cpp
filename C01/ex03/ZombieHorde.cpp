@@ -6,7 +6,7 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 17:54:10 by abourbou          #+#    #+#             */
-/*   Updated: 2021/01/30 21:48:10 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/02/16 10:40:11 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ std::string		randomName(void)
 {
 	int				i;
 	std::string const name_characters = "abcdefghijklmnopqrstuvwxyz";
-	std::string		name;	
+	std::string		name;
 
 	std::random_device random_device;
 	std::mt19937 generator(random_device());
