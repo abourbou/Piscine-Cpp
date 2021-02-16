@@ -6,7 +6,7 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 14:53:55 by abourbou          #+#    #+#             */
-/*   Updated: 2021/02/16 18:04:01 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/02/16 18:21:27 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,11 @@ void	NinjaTrap::NinjaShoebox(NinjaTrap const & partner)
 	if (this->energy_points < 20)
 	{
 		std::cout << "NinjaTrap " << this->name << ": Not enought energy to execute attack" << std::endl;
+		return ;
+	}
+	if (this == &partner)
+	{
+		std::cout << "NinjaTrap " << this->name << ": you need to find a friend!" << std::endl;
 		return ;
 	}
 	this->energy_points -= 20;

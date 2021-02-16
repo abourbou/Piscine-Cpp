@@ -6,7 +6,7 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 10:22:39 by abourbou          #+#    #+#             */
-/*   Updated: 2021/02/16 18:04:50 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/02/16 18:21:43 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,6 @@ int		main(void)
 	Ninja.NinjaShoebox(Clap);
 	Ninja.NinjaShoebox(Robot);
 	Ninja.NinjaShoebox(Opener);
+	Ninja.NinjaShoebox(Ninja);
 	Ninja.NinjaShoebox(Clone);
 }	
