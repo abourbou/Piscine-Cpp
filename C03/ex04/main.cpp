@@ -6,7 +6,7 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 10:22:39 by abourbou          #+#    #+#             */
-/*   Updated: 2021/02/17 15:06:51 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/02/17 16:45:44 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,12 @@ int		main(void)
 	std::cout << std::endl << std::endl;
 	
 	SuperTrap	Optimus("Prime");
+	Optimus.takeDamage(25);
+	
 	Optimus.meleeAttack("evil");
 	Optimus.rangedAttack("evil");
-	Optimus.beRepaired(0);
+	Optimus.beRepaired(10);
+	Optimus.vaulthunter_dot_exe("ennemy");
+	Optimus.NinjaShoebox(Opener);
 	std::cout << std::endl << std::endl;
 }	

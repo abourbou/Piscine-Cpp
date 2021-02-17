@@ -6,22 +6,15 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 13:37:32 by abourbou          #+#    #+#             */
-/*   Updated: 2021/02/17 15:06:16 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/02/17 16:44:15 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "SuperTrap.hpp"
 
-SuperTrap::SuperTrap(void): ClapTrap()
+SuperTrap::SuperTrap(void) : ClapTrap(100, 100, 120, 120, 1,
+							"default product", 60, 20, 5)
 {
-	this->hit_points = 100;
-	this->max_hit_points = 100;
-	this->energy_points = 120;
-	this->max_energy_points = 120;
-	this->melee_attack_dmg = 60;
-	this->range_attack_dmg = 20;
-	this->armor_dmg_reduction = 20;
-
 	std::cout << "Default constructor SuperTrap called" << std::endl;
 	(void)this->max_energy_points;
 	(void)this->level; 
@@ -33,17 +26,10 @@ SuperTrap::SuperTrap(const SuperTrap & cpy)
 	std::cout << "Constructor by copy called" << std::endl;
 }
 
-SuperTrap::SuperTrap(std::string his_name): ClapTrap(his_name)
+SuperTrap::SuperTrap(std::string his_name): ClapTrap(100, 100, 120, 120, 1,
+											his_name, 60, 20, 5)
 {
-	this->hit_points = 100;
-	this->max_hit_points = 100;
-	this->energy_points = 120;
-	this->max_energy_points = 120;
-	this->melee_attack_dmg = 60;
-	this->range_attack_dmg = 20;
-	this->armor_dmg_reduction = 20;
-
-	std::cout << "Default constructor SuperTrap called" << std::endl;
+	std::cout << "Constructor by name of SuperTrap called" << std::endl;
 	(void)this->max_energy_points;
 	(void)this->level; 
 }
