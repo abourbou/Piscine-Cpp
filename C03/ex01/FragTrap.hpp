@@ -6,7 +6,7 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 09:14:17 by abourbou          #+#    #+#             */
-/*   Updated: 2021/02/16 10:40:37 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/02/17 11:55:15 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,11 @@ class	FragTrap
 		int	armor_dmg_reduction;
 
 	public:
+		FragTrap(void);
+		FragTrap(FragTrap const &cpy);
 		FragTrap(std::string his_name);
 		~FragTrap(void);
+		FragTrap	&operator=(FragTrap const &cpy);
 		void	rangedAttack(std::string const & target);
 		void	meleeAttack(std::string const & target);
 		void	takeDamage(unsigned int amount);

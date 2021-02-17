@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   SuperTrap.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/16 18:25:23 by abourbou          #+#    #+#             */
-/*   Updated: 2021/02/17 11:40:10 by abourbou         ###   ########lyon.fr   */
+/*   Created: 2021/02/17 10:48:05 by abourbou          #+#    #+#             */
+/*   Updated: 2021/02/17 11:34:32 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SUPERTRAP_HPP
-# define SUPERTRAP_HPP
+#include "class.hpp"
 
-# include "NinjaTrap.hpp"
-
-class	SuperTrap : public FragTrap, public NinjaTrap
+int		main(void)
 {
-	SuperTrap(std::string his_name)
-};
+	A	A1;
+	std::cout << std::endl;
+	A	A2(31);
+	std::cout << std::endl;
+	B	B1(15);
+	std::cout << std::endl;
+	C	C1(141);
+	std::cout << std::endl;
+	D	D1(9, 47, 63);
+	std::cout << std::endl;
+	std::cout << D1.get_x() << std::endl;
 
-# endif
+	A	A3(B1);
+	std::cout << std::endl;
+}

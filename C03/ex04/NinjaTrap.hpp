@@ -6,7 +6,7 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 13:57:33 by abourbou          #+#    #+#             */
-/*   Updated: 2021/02/16 18:01:41 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/02/17 11:36:58 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include "FragTrap.hpp"
 # include "ScavTrap.hpp"
 
-class NinjaTrap : public ClapTrap
+class NinjaTrap : virtual public ClapTrap
 {
 	public:
 		NinjaTrap(std::string his_name);

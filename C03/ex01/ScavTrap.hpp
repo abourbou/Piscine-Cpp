@@ -6,7 +6,7 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 10:46:26 by abourbou          #+#    #+#             */
-/*   Updated: 2021/02/16 10:56:47 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/02/17 13:10:03 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,9 @@ class	ScavTrap
 	public:
 		ScavTrap(std::string his_name);
 		~ScavTrap(void);
+		ScavTrap(void);
+		ScavTrap(ScavTrap const &cpy);
+		ScavTrap	&operator=(ScavTrap const &cpy);
 		void	rangedAttack(std::string const & target);
 		void	meleeAttack(std::string const & target);
 		void	takeDamage(unsigned int amount);
