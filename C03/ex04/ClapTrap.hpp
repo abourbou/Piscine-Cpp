@@ -6,7 +6,7 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 11:14:09 by abourbou          #+#    #+#             */
-/*   Updated: 2021/02/17 13:13:24 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/02/17 14:24:41 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ class ClapTrap
 	public:
 		ClapTrap(void);
 		ClapTrap(ClapTrap const &cpy);
+		ClapTrap(std::string const name);
 		ClapTrap(int hp, int max_hp, int nrg_p, int max_nrg_p, int lvl,
 				 std::string his_name, int melee, int range, int arm);
 		~ClapTrap(void);

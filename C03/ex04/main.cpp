@@ -6,13 +6,14 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 10:22:39 by abourbou          #+#    #+#             */
-/*   Updated: 2021/02/16 18:21:43 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/02/17 15:06:51 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 #include "NinjaTrap.hpp"
+#include "SuperTrap.hpp"
 
 int		main(void)
 {
@@ -76,4 +77,12 @@ int		main(void)
 	Ninja.NinjaShoebox(Opener);
 	Ninja.NinjaShoebox(Ninja);
 	Ninja.NinjaShoebox(Clone);
+
+	std::cout << std::endl << std::endl;
+	
+	SuperTrap	Optimus("Prime");
+	Optimus.meleeAttack("evil");
+	Optimus.rangedAttack("evil");
+	Optimus.beRepaired(0);
+	std::cout << std::endl << std::endl;
 }	

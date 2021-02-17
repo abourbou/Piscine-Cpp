@@ -6,7 +6,7 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 11:14:05 by abourbou          #+#    #+#             */
-/*   Updated: 2021/02/17 13:22:36 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/02/17 14:25:29 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,14 @@ ClapTrap::ClapTrap(void) : hit_points(100), max_hit_points(100),
 						   range_attack_dmg(25), armor_dmg_reduction(4)
 {
 	std::cout << "Default constructor ClapTrap called" << std::endl;
+	(void)max_energy_points;
+	(void)level;
+}
+ClapTrap::ClapTrap(std::string const his_name) : hit_points(100), max_hit_points(100),
+						   energy_points(100), level(1), name(his_name), melee_attack_dmg(25),
+						   range_attack_dmg(25), armor_dmg_reduction(4)
+{
+	std::cout << "Constructor by name ClapTrap called" << std::endl;
 	(void)max_energy_points;
 	(void)level;
 }
