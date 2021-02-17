@@ -6,7 +6,7 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 13:57:33 by abourbou          #+#    #+#             */
-/*   Updated: 2021/02/16 18:01:41 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/02/17 13:30:04 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ class NinjaTrap : public ClapTrap
 {
 	public:
 		NinjaTrap(std::string his_name);
+		NinjaTrap(void);
+		NinjaTrap(NinjaTrap const & cpy);
 		~NinjaTrap(void);
+		NinjaTrap &operator=(NinjaTrap const & cpy);
 		void	NinjaShoebox(ClapTrap &partner);
 		void	NinjaShoebox(FragTrap const & partner);
 		void	NinjaShoebox(ScavTrap & partner);

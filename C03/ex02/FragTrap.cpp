@@ -6,28 +6,27 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 09:14:19 by abourbou          #+#    #+#             */
-/*   Updated: 2021/02/17 11:56:36 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/02/17 13:22:29 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(void): hit_points(100), max_hit_points(100),
-					energy_points(100), level(1), name("default product"), melee_attack_dmg(30),
-					range_attack_dmg(20), armor_dmg_reduction(5)
+FragTrap::FragTrap(void): ClapTrap(100, 100, 100, 100, 1, "default product",
+											30, 20, 5)
 {
-	std::cout << "Default constructor FragTrap called" << std::endl;
-	(void)max_energy_points;
-	(void)level;
+	std::cout << "Default constructor FragTrap " << this->name << " called" << std::endl;
+	(void)this->max_energy_points;
+	(void)this->level;
 }
 
-FragTrap::FragTrap(FragTrap const &cpy)
+FragTrap::FragTrap(FragTrap const & cpy)
 {
 	*this = cpy;
 	std::cout << "creation copy of FragTrap " << cpy.name << std::endl;
 }
 
-FragTrap	&FragTrap::operator=(FragTrap const &cpy)
+FragTrap	&FragTrap::operator=(FragTrap const & cpy)
 {
 	this->hit_points = cpy.hit_points;
 	this->max_hit_points = cpy.max_hit_points;
@@ -38,7 +37,7 @@ FragTrap	&FragTrap::operator=(FragTrap const &cpy)
 	this->melee_attack_dmg = cpy.melee_attack_dmg;
 	this->range_attack_dmg = cpy.range_attack_dmg;
 	this->armor_dmg_reduction = cpy.armor_dmg_reduction;
-	return(*this);
+	return (*this);
 }
 
 FragTrap::FragTrap(std::string his_name): ClapTrap(100, 100, 100, 100, 1, his_name,

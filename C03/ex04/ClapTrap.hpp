@@ -6,7 +6,7 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 11:14:09 by abourbou          #+#    #+#             */
-/*   Updated: 2021/02/16 17:46:27 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/02/17 13:13:24 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,12 @@ class ClapTrap
 		int	armor_dmg_reduction;
 
 	public:
+		ClapTrap(void);
+		ClapTrap(ClapTrap const &cpy);
 		ClapTrap(int hp, int max_hp, int nrg_p, int max_nrg_p, int lvl,
 				 std::string his_name, int melee, int range, int arm);
 		~ClapTrap(void);
+		ClapTrap	&operator=(ClapTrap const &cpy);
 		void	rangedAttack(std::string const & target) const;
 		void	meleeAttack(std::string const & target) const;
 		void	takeDamage(unsigned int amount);
