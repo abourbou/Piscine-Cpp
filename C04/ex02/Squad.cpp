@@ -24,17 +24,17 @@ Squad::~Squad(void)
 
 Squad				&Squad::operator=(const Squad &rhs)
 {
-	this->_lunits = rhs._lunits;
-	this->_nbr_units = rhs._nbr_units;
+	if (this == &rhs)
+		return (*this);
+	this->_destroy_lunits();
 
-	t_list	*current = this->_lunits;
+	t_list	*current = rhs._lunits;
 	while (current)
 	{
-		ISpaceMarine *new_recruit = _lunits->unit->clone();
-		delete(_lunits->unit);
-		_lunits->unit = new_recruit;
+		this->push(current->unit->clone());
 		current = current->next;
 	}
+	this->_nbr_units = rhs._nbr_units;
 	return (*this);
 }
 
@@ -53,7 +53,6 @@ ISpaceMarine*	Squad::getUnit(int number) const
 		std::cout << "This marine doesn't exist" << std::endl;
 		return (0);
 	}
-	std::cout << "i : " << i << std::endl;
 	while (i != number)
 	{
 		current = current->next;
@@ -95,6 +94,21 @@ int		Squad::push(ISpaceMarine* new_recruit)
 		current->next = new_elem;
 	}
 	_nbr_units++;
-	std::cout << "new recruit had to the squad. The squad has " << _nbr_units << " elements" << std::endl;
 	return (1);
+}
+
+void	Squad::_destroy_lunits(void)
+{
+	t_list	*current = _lunits;
+	t_list	*next;
+
+	while (current)
+	{
+		next = current->next;
+		delete current->unit;
+		delete current;
+		current = next;
+	}
+	_lunits = 0;
+	_nbr_units = 0;
 }

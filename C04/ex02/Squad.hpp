@@ -10,7 +10,7 @@ class Squad: public ISquad
 		Squad(void);
 		Squad(const Squad &rhs);
 		~Squad(void);
-		Squad			&operator=(const Squad &rhs);
+		Squad	&operator=(const Squad &rhs);
 		int		getCount(void) const;
 		ISpaceMarine*	getUnit(int nbr_unit) const;
 		int		push(ISpaceMarine* new_recruit);
@@ -18,6 +18,7 @@ class Squad: public ISquad
 	private:
 		t_list	*_lunits;
 		int		_nbr_units;
+		void	_destroy_lunits(void);
 };
 
 #endif
