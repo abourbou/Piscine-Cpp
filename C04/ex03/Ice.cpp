@@ -1,36 +1,34 @@
 #include "Ice.hpp"
 
-Ice::Ice(void) : _xp(0), _type("ice")
+Ice::Ice(void) : AMateria("ice")
 {
 }
 
-Ice::Ice(const Ice &rhs) : _type("ice")
+Ice::Ice(const Ice &rhs) : AMateria("ice")
 {
 	*this = rhs;
 }
 
 Ice::~Ice(void)
 {
+	std::cout << "I'm melting..." << std::endl;
 }
 
 Ice					&Ice::operator=(const Ice &rhs)
 {
-	this->_xp = rhs._xp;
+	this->_xp = rhs.getXP();
 	return (*this);
 }
 
-	/********************************
-
-			GETTER // SETTER
-
-	********************************/
-
-int					Ice::getXP(void) const
+AMateria	*Ice::clone(void) const
 {
-	return (_xp);
+	AMateria *new_mat = new Ice(*this);
+
+	return (new_mat);
 }
 
-std::string const	Ice::getType(void) const
+void	Ice::use(ICharacter &target)
 {
-	return (_type);
+	this->AMateria::use(target);
+	std::cout << "* shoots an ice bolt at " << target.getName() << std::endl;
 }
