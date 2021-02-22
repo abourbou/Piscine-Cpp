@@ -4,7 +4,12 @@ Bureaucrat::Bureaucrat(void):	_name("none"), _grade(150)
 {}
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
-{}
+{
+	if (_grade > 150)
+		throw(Bureaucrat::GradeTooLowException{});
+	if (_grade < 1)
+		throw(Bureaucrat::GradeTooHighException{});
+}
 
 Bureaucrat::Bureaucrat(const Bureaucrat &rhs) : _name(rhs._name), _grade(rhs._grade)
 {

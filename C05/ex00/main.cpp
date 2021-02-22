@@ -6,7 +6,7 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 14:15:10 by abourbou          #+#    #+#             */
-/*   Updated: 2021/02/22 14:32:31 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/02/22 15:10:05 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,31 @@ int		main(void)
 	Bureaucrat	Franck("Franck", 80);
 	std::cout << Elizabeth << std::endl;
 	std::cout << Franck << std::endl;
+
+	try
+	{
+		Bureaucrat	Robert("Robert", 511);
+	}
+	catch(const Bureaucrat::GradeTooHighException& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	catch(const Bureaucrat::GradeTooLowException& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	try
+	{
+		Bureaucrat	Francois("Francois", -19);
+	}
+	catch(const Bureaucrat::GradeTooHighException& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	catch(const Bureaucrat::GradeTooLowException& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 
 	Bureaucrat	Boss("Macron", 1);
 	Bureaucrat	Lackey("Lackey", 150);
