@@ -4,21 +4,44 @@
 # include <string>
 # include <exception>
 
-class Bureaucrat: public std::exception
+class Bureaucrat
 {
 	public:
+		Bureaucrat(void);
 		Bureaucrat(std::string name, int grade);
+		Bureaucrat(const Bureaucrat &rhs);
 		~Bureaucrat(void);
+		Bureaucrat			&operator=(const Bureaucrat &rhs);
 		void	IncrementGrade(void);
 		void	DecrementGrade(void);
-//		GETTER // SETTER
 
+//		GETTER // SETTER
 		std::string			getName(void) const;
 		int					getGrade(void) const;
 
+//		EXCEPTION CLASS
+		class	GradeTooHighException : public std::exception
+		{
+			public:
+				virtual const char	*what(void) const throw()
+				{
+					return ("Grade too high");
+				}
+		};
+		class	GradeTooLowException: public std::exception
+		{
+			public:
+				virtual const char	*what(void) const throw()
+				{
+					return ("Grade too low");
+				}
+		};
+
 	private:
-		std::string			_name;
+		std::string const	_name;
 		int					_grade;
 };
+std::ostream	&operator<<(std::ostream &o, Bureaucrat const &rhs);
+
 
 #endif
