@@ -6,7 +6,7 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 10:07:49 by abourbou          #+#    #+#             */
-/*   Updated: 2021/02/23 11:18:21 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/02/23 11:39:56 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 int		main(void)
 {
 	Bureaucrat	Jack("Jack", 5);
-	ShrubberyCreationForm	F12("F12");
-	RobotomyRequestForm		R87("R87");
-	PresidentialPardonForm	P47("P47");
+	ShrubberyCreationForm	F12("Ivern");
+	RobotomyRequestForm		R87("Alex Murphy");
+	PresidentialPardonForm	P47("Margaret Mitchell");
 
 	try
 	{

@@ -12,7 +12,7 @@ class Form
 public:
 	Form(void);
 	Form(const Form &rhs);
-	Form(std::string name, int signed_grad, int exec_grad);
+	Form(std::string name, int signed_grad, int exec_grad, std::string target);
 	~Form(void);
 	Form &operator=(const Form &rhs);
 	void be_signed(Bureaucrat official);
@@ -25,6 +25,7 @@ public:
 	bool getIs_signed(void) const;
 	int getSigned_grad(void) const;
 	int getExec_grad(void) const;
+	std::string getTarget(void) const;
 
 	//		EXCEPTION CLASS
 	class GradeTooHighException : public std::exception
@@ -58,6 +59,7 @@ private:
 	bool _is_signed;
 	int const _signed_grad;
 	int const _exec_grad;
+	std::string const _target;
 };
 std::ostream &operator<<(std::ostream &o, Form const &rhs);
 

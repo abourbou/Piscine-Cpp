@@ -1,16 +1,16 @@
 #include "Form.hpp"
 
-Form::Form(void) : _name("none"), _is_signed(0), _signed_grad(150), _exec_grad(150)
+Form::Form(void) : _name("none"), _is_signed(0), _signed_grad(150), _exec_grad(150), _target("none")
 {
 }
 
-Form::Form(const Form &rhs): _name(rhs._name), _is_signed(rhs._is_signed),
-							_signed_grad(rhs._signed_grad), _exec_grad(rhs._exec_grad)
+Form::Form(const Form &rhs): _name(rhs._name), _is_signed(rhs._is_signed), _signed_grad(rhs._signed_grad),
+							_exec_grad(rhs._exec_grad), _target(rhs.getTarget())
 {
 }
 
-Form::Form(std::string name, int signed_grad, int exec_grad): _name(name), _is_signed(0),
-																_signed_grad(signed_grad), _exec_grad(exec_grad)
+Form::Form(std::string name, int signed_grad, int exec_grad, std::string target): _name(name), _is_signed(0),
+													_signed_grad(signed_grad), _exec_grad(exec_grad), _target(target)
 {
 	if (_signed_grad < 1 || _exec_grad < 1)
 		throw(Form::GradeTooHighException());
@@ -67,6 +67,11 @@ int					Form::getSigned_grad(void) const
 int					Form::getExec_grad(void) const
 {
 	return (_exec_grad);
+}
+
+std::string			Form::getTarget(void) const
+{
+	return (_target);
 }
 
 std::ostream	&operator<<(std::ostream &o, Form const &rhs)

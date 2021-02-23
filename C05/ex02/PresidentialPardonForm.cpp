@@ -1,14 +1,14 @@
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(void): Form("none", 25, 5)
+PresidentialPardonForm::PresidentialPardonForm(void): Form("Presidential Pardon Form", 25, 5, "none")
 {
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &rhs): Form(rhs.getName(), 25, 5)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &rhs): Form(rhs)
 {
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string const &name): Form(name, 25, 5)
+PresidentialPardonForm::PresidentialPardonForm(std::string const &target): Form("Presidential Pardon Form", 25, 5, target)
 {
 }
 
@@ -25,5 +25,5 @@ PresidentialPardonForm			&PresidentialPardonForm::operator=(const PresidentialPa
 void	PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
 	is_executable(executor);
-	std::cout << executor.getName() << " has been pardonned by Zafod Beeblebrox." << std::endl;
+	std::cout << this->getTarget() << " has been pardonned by Zafod Beeblebrox." << std::endl;
 }

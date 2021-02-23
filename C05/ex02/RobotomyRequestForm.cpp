@@ -1,14 +1,14 @@
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(void): Form("none", 72, 45)
+RobotomyRequestForm::RobotomyRequestForm(void): Form("Robotomy Request Form", 72, 45, "none")
 {
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &rhs): Form(rhs.getName(), 72, 45)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &rhs): Form(rhs)
 {
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string const name): Form(name, 72, 45)
+RobotomyRequestForm::RobotomyRequestForm(std::string const &target): Form("Robotomy Request Form", 72, 45, target)
 {
 }
 
@@ -32,7 +32,7 @@ void	RobotomyRequestForm::execute(Bureaucrat const &executor) const
 
 	std::cout << "Pzzzzzz Pzzzzz Pzzzzzz" << std::endl;
 	if (distribution(generator))
-		std::cout << executor.getName() << " has been robotomized" << std::endl;
+		std::cout << this->getTarget() << " has been robotomized" << std::endl;
 	else
-		std::cout << "Failure : " << executor.getName() << " has been lobotomized" << std::endl;
+		std::cout << "Failure : " << this->getTarget() << " has been lobotomized" << std::endl;
 }

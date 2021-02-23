@@ -1,14 +1,14 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(void): Form("none", 145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm(void): Form("Shrubbery Creation Form", 145, 137, "none")
 {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &rhs): Form(rhs.getName(), 145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &rhs): Form(rhs)
 {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string const name): Form(name, 145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string const &target): Form("Shrubbery Creation Form", 145, 137, target)
 {
 }
 
@@ -27,7 +27,7 @@ void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 	std::ofstream	os;
 
 	is_executable(executor);
-	os.open((executor.getName() + "_shrubbery").c_str());
+	os.open((this->getTarget() + "_shrubbery").c_str());
 
 	std::random_device random_device;
 	std::mt19937 generator(random_device());
