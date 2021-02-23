@@ -13,9 +13,9 @@ Form::Form(std::string name, int signed_grad, int exec_grad): _name(name), _is_s
 																_signed_grad(signed_grad), _exec_grad(exec_grad)
 {
 	if (_signed_grad < 1 || _exec_grad < 1)
-		throw(Form::GradeTooHighException{});
+		throw(Form::GradeTooHighException());
 	if (_signed_grad > 150 || _exec_grad > 150)
-		throw(Form::GradeTooLowException{});
+		throw(Form::GradeTooLowException());
 }
 
 Form::~Form(void)
@@ -31,7 +31,7 @@ Form				&Form::operator=(const Form &rhs)
 void	Form::be_signed(Bureaucrat official)
 {
 	if (_signed_grad < official.getGrade())
-		throw(Form::GradeTooLowException{});
+		throw(Form::GradeTooLowException());
 	_is_signed = 1;
 }
 

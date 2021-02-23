@@ -6,7 +6,7 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 16:03:13 by abourbou          #+#    #+#             */
-/*   Updated: 2021/02/19 10:24:37 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/02/23 09:34:17 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ int		main(void)
 
 	Harry.polymorph(Ron);
 	Harry.polymorph(Neuville);
-
+	Neuville.Victim::getPolymorphed();
 	return (0);
 }

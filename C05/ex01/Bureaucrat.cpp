@@ -6,9 +6,9 @@ Bureaucrat::Bureaucrat(void):	_name("none"), _grade(150)
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 {
 	if (_grade > 150)
-		throw(Bureaucrat::GradeTooLowException{});
+		throw(Bureaucrat::GradeTooLowException());
 	if (_grade < 1)
-		throw(Bureaucrat::GradeTooHighException{});
+		throw(Bureaucrat::GradeTooHighException());
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &rhs) : _name(rhs._name), _grade(rhs._grade)
@@ -28,14 +28,14 @@ Bureaucrat	&Bureaucrat::operator=(const Bureaucrat &rhs)
 void		Bureaucrat::IncrementGrade(void)
 {
 	if (_grade == 1)
-		throw(GradeTooHighException{});
+		throw(GradeTooHighException());
 	_grade--;
 }
 
 void		Bureaucrat::DecrementGrade(void)
 {
 	if (_grade == 150)
-		throw(GradeTooLowException{});
+		throw(GradeTooLowException());
 	_grade++;
 }
 
