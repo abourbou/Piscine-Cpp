@@ -64,6 +64,10 @@ void	Bureaucrat::executeForm(Form const & form) const
 	{
 		std::cerr << this->_name << " can't execute " << form.getName() <<  " because " << e.what() << std::endl;
 	}
+	catch(const Form::IsNotSigned &e)
+	{
+		std::cerr << this->_name << " can't execute " << form.getName() <<  " because " << e.what() << std::endl;
+	}
 }
 
 	/********************************

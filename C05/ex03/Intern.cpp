@@ -58,6 +58,7 @@ Form	*Intern::makeForm(std::string const form, std::string const target)
 		}
 		i++;
 	}
-	std::cout << "Intern couldn't create form because it doesn't exist" << std::endl;
+	std::cout << "Intern couldn't create form because " << form;
+	std::cout << " doesn't exist" << std::endl;
 	return (0);
 }

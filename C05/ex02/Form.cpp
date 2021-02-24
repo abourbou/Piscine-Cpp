@@ -37,10 +37,11 @@ void	Form::be_signed(Bureaucrat official)
 
 void	Form::is_executable(Bureaucrat const &executor) const
 {
-	if (executor.getGrade() > _exec_grad)
-		throw(GradeTooLowException());
 	if (!_is_signed)
 		throw(IsNotSigned());
+	if (executor.getGrade() > _exec_grad)
+		throw(GradeTooLowException());
+
 }
 
 	/********************************
@@ -77,7 +78,8 @@ std::string			Form::getTarget(void) const
 std::ostream	&operator<<(std::ostream &o, Form const &rhs)
 {
 	o << "Form " << rhs.getName() << ", signed grade required : " << rhs.getSigned_grad();
-	o << ", execution grade required : " << rhs.getExec_grad() << " is ";
+	o << ", execution grade required : " << rhs.getExec_grad();
+	o << ". The target is " << rhs.getTarget() << " and it is ";
 	if (!rhs.getIs_signed())
 		o << "not ";
 	o << "signed." << std::endl;

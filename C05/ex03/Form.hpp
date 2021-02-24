@@ -13,7 +13,7 @@ public:
 	Form(void);
 	Form(const Form &rhs);
 	Form(std::string name, int signed_grad, int exec_grad, std::string target);
-	~Form(void);
+	virtual ~Form(void);
 	Form &operator=(const Form &rhs);
 	void be_signed(Bureaucrat official);
 	virtual void	execute(Bureaucrat const &executor) const =0;
