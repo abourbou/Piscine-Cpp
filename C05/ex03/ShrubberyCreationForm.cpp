@@ -25,16 +25,14 @@ ShrubberyCreationForm			&ShrubberyCreationForm::operator=(const ShrubberyCreatio
 void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
 	std::ofstream	os;
+	time_t			current_time;
 
 	is_executable(executor);
 	os.open((this->getTarget() + "_shrubbery").c_str());
+	time(&current_time);
+	srand(current_time % 150);
 
-	std::random_device random_device;
-	std::mt19937 generator(random_device());
-	std::uniform_int_distribution<> distribution_nbr(2, 5);
-	std::uniform_int_distribution<> distribution_width(2, 5);
-
-	int		nbr_shrubbery = distribution_nbr(generator);
+	int		nbr_shrubbery = rand()  % 4 + 2;
 	int		i = 0;
 	int		j;
 	int		k;
@@ -45,7 +43,7 @@ void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 
 	while (i < nbr_shrubbery)
 	{
-		int	size_tree = distribution_width(generator) * 2;
+		int	size_tree = rand() % 7 + 3;
 		j = 0;
 		while (j < size_tree)
 		{

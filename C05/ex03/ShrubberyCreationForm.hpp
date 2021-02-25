@@ -3,7 +3,8 @@
 # include <iostream>
 # include <string>
 #include <fstream>
-#include <random>
+#include <cstdlib>
+#include <ctime>
 # include "Form.hpp"
 # include "Bureaucrat.hpp"
 
