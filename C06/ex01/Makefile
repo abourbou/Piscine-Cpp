@@ -4,11 +4,11 @@ CC			=	clang++
 
 FLAGS		=	-Wall -Werror -Wextra
 
-SRC			=	main.cpp convert.cpp write_conv.cpp
+SRC			=	
 
 OBJ			=	$(SRC:.cpp=.o)
 
-INC			=	convert.hpp
+INC			=	
 
 all			:	$(NAME)
 
