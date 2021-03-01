@@ -2,7 +2,7 @@ NAME		=	serialization
 
 CC			=	clang++
 
-FLAGS		=	-Wall -Werror -Wextra -std=c++98
+FLAGS		=	-Wall -Werror -Wextra --std=c++98
 
 SRC			=	main.cpp serialize.cpp deserialize.cpp
 
