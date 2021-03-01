@@ -1,14 +1,14 @@
-NAME		=	convert
+NAME		=	serialization
 
 CC			=	clang++
 
-FLAGS		=	-Wall -Werror -Wextra
+FLAGS		=	-Wall -Werror -Wextra -std=c++98
 
-SRC			=	
+SRC			=	main.cpp serialize.cpp deserialize.cpp
 
 OBJ			=	$(SRC:.cpp=.o)
 
-INC			=	
+INC			=	serialize.hpp
 
 all			:	$(NAME)
 
