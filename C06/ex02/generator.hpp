@@ -6,7 +6,7 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 20:29:58 by abourbou          #+#    #+#             */
-/*   Updated: 2021/03/01 21:41:17 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/03/01 21:45:55 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <ctime>
 #include <iostream>
 #include <string>
+//pas le choix, ca contient bad_cast
 #include <typeinfo>
 class	Base {
 	public :
