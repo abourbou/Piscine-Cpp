@@ -6,7 +6,7 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 13:58:07 by abourbou          #+#    #+#             */
-/*   Updated: 2021/03/02 20:06:22 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/03/02 20:22:58 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,8 @@ class	Array
 			_ptr = new T[0];
 			_size = 0;
 		}
-		Array(int n)
+		Array(unsigned int n)
 		{
-			if (n < 0)
-				throw(NegatifSize());
 			_ptr = new T[n];
 			_size = n;
 		}
@@ -51,7 +49,7 @@ class	Array
 				delete[] _ptr;
 			_size = cpy._size;
 			_ptr = new T[_size];
-			int	i = 0;
+			unsigned int	i = 0;
 			while (i < _size)
 			{
 				_ptr[i] = cpy._ptr[i];
@@ -59,11 +57,9 @@ class	Array
 			}
 			return (*this);
 		}
-		T			&operator[](int index)
+		T			&operator[](unsigned int index)
 		{
-			if (index < 0)
-				throw(NegatifSize());
-			else if (index > _size - 1)
+			if (index > _size - 1)
 				throw(OutOfRange());
 			return (_ptr[index]);
 		}
@@ -71,20 +67,15 @@ class	Array
 		{
 			return (_size);
 		}
-	//exceptions
-	class	NegatifSize : public std::exception {
-		public:
-			virtual const char *what(void) const throw()
-			{ return ("Negatif size of array");}
-	};
+	//exception
 	class	OutOfRange : public std::exception {
 		public:
 			virtual const char *what(void) const throw()
 				{return ("Index out of range");}
 	};
 	private:
-		T		*_ptr;
-		int		_size;
+		T				*_ptr;
+		unsigned int	_size;
 };
 
 #endif
