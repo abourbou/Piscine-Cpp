@@ -6,7 +6,7 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 13:58:07 by abourbou          #+#    #+#             */
-/*   Updated: 2021/03/02 16:13:14 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/03/02 20:06:22 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ class	Array
 			int	i = 0;
 			while (i < _size)
 			{
-				_ptr[i] = cpy[i];
+				_ptr[i] = cpy._ptr[i];
 				i++;
 			}
 			return (*this);
@@ -63,7 +63,7 @@ class	Array
 		{
 			if (index < 0)
 				throw(NegatifSize());
-			else if (index > _size)
+			else if (index > _size - 1)
 				throw(OutOfRange());
 			return (_ptr[index]);
 		}
