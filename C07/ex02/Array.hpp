@@ -6,7 +6,7 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 13:58:07 by abourbou          #+#    #+#             */
-/*   Updated: 2021/03/02 16:06:02 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/03/02 16:13:14 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,15 @@ class	Array
 		class	OutofRange;
 		Array(void)
 		{
-
 			_ptr = new T[0];
+			_size = 0;
 		}
 		Array(int n)
 		{
 			if (n < 0)
 				throw(NegatifSize());
 			_ptr = new T[n];
+			_size = n;
 		}
 		Array(Array const &cpy)
 		{
