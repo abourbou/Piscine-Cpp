@@ -30,7 +30,7 @@ T	min(T const &first, T const &second)
 template <typename T>
 T	max(T const &first, T const &second)
 {
-	return ((first < second) ? second : first);
+	return ((first <= second) ? second : first);
 }
 
 #endif
