@@ -22,19 +22,12 @@ class	Array
 	// exception class ref
 		class	NegativeSize;
 		class	OutofRange;
-		Array(void)
+		Array(void): _ptr(new T[0]), _size(0)
+		{}
+		Array(unsigned int n): _ptr(new T[n]), _size(n)
+		{}
+		Array(Array const &cpy): _ptr(0), _size(0)
 		{
-			_ptr = new T[0];
-			_size = 0;
-		}
-		Array(unsigned int n)
-		{
-			_ptr = new T[n];
-			_size = n;
-		}
-		Array(Array const &cpy)
-		{
-			_ptr = 0;
 			*this = cpy;
 		}
 		~Array(void)
