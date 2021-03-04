@@ -6,7 +6,7 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 10:59:35 by abourbou          #+#    #+#             */
-/*   Updated: 2021/03/04 14:59:37 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/03/04 15:05:59 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ int		main(void)
 	std::cout << "longest span : " << tab.longestSpan() << std::endl;
 
 	std::cout << std::endl << "TEST ADDNNUMBER " << std::endl;
-	span	tab3(4);
-	tab3.addnNumber(33, 3);
+	span	tab3(10001);
+	tab3.addnNumber(35, 10000);
 	tab3.addNumber(5);
 	try
 	{
