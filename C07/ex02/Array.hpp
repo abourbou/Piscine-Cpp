@@ -6,7 +6,7 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 13:58:07 by abourbou          #+#    #+#             */
-/*   Updated: 2021/03/02 20:22:58 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/03/04 09:08:24 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ class	Array
 {
 	public:
 	// exception class ref
-		class	NegativeSize;
 		class	OutofRange;
 		Array(void): _ptr(new T[0]), _size(0)
 		{}
