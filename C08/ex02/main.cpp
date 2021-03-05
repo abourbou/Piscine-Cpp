@@ -6,7 +6,7 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 09:36:47 by abourbou          #+#    #+#             */
-/*   Updated: 2021/03/05 10:11:41 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/03/05 10:15:02 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,13 @@
 int		main(void)
 {
 	MutantStack<int>	mstack;
+	std::cout << "mstack is empty : " << mstack.empty() << std::endl;
 	mstack.push(5);
 	mstack.push(17);
 	std::cout << "on top : " << mstack.top() << std::endl;
 	mstack.pop();
 	std::cout << "size : " << mstack.size() << std::endl;
+	std::cout << "mstack is empty : " << mstack.empty() << std::endl;
 	mstack.push(3);
 	mstack.push(5);
 	mstack.push(737);
