@@ -6,7 +6,7 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 15:12:43 by abourbou          #+#    #+#             */
-/*   Updated: 2021/03/04 16:48:20 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/03/05 10:10:35 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,30 +16,21 @@
 #include <stack>
 
 template<typename T>
-class	mutantstack: public stack<T>
+class	MutantStack: public std::stack<T>
 {
 	public:
-		mutantstack(void);
-		mutantstack(void);
-		~mutantstack(void);
-		mutantstack	&operator=(const mutantstack &rhs);
+		MutantStack(void){};
+		MutantStack(const MutantStack &rhs){*this = rhs;};
+		~MutantStack(void){};
+		MutantStack	&operator=(const MutantStack &rhs){*this = rhs;};
 
-	//ITERATOR
-		class	iterator
-		{
-			public:
-				iterator	&operator++(void);
-				iterator	operator++(int i);
-				iterator	&operator--(void);
-				iterator	operator--(int i);
-				iterator
-				mutantstack
-			
-			private:
-				mutantstack	*_ptr;
-		};
-		iterator	&begin(void);
-		iterator	&end(void);
-}
+		//stack is a wrapper of container class vector, deque and list
+		typedef typename MutantStack::container_type::iterator iterator;
+
+	// c is a protected member of the stack which point on the container
+	// it is usefull to get function or private member of a container class
+		iterator	begin(void){return this->c.begin();};
+		iterator	end(void){return this->c.end();};
+};
 
 #endif
