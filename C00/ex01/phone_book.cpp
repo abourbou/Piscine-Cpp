@@ -6,7 +6,7 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/21 21:05:42 by abourbou          #+#    #+#             */
-/*   Updated: 2021/01/24 16:13:07 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/04/17 11:32:07 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ void	add_user(contact *new_contact, int index)
 
 void		search_user(contact contact_list[8], int index)
 {
-	int		i;
-	int		index_cont;
+	int			i;
+	std::string	index_cont;
 
 	i = 0;
 	if (!index)
@@ -92,13 +92,14 @@ void		search_user(contact contact_list[8], int index)
 		i++;
 	}
 	std::cout << "Pls enter the index of the needed contact" << std::endl;
-	std::cin >> index_cont;
-	while (index_cont < 1 || index_cont > 8)
+	std::cin.ignore(INT64_MAX, '\n');
+	std::getline(std::cin, index_cont);
+	while (index_cont.size() > 1 || index_cont[0] < '1'  || index_cont[0] > (char)(index + '0'))
 	{
-		std::cout << "Index not found, pls try again";
-		std::cin >> index_cont;
+		std::cout << "Index not found, pls try again" << std::endl;
+		std::getline(std::cin, index_cont);
 	}
-	display_user(&contact_list[index_cont - 1]);
+	display_user(&contact_list[(int)(index_cont[0] - '0') - 1]);
 }
 
 int		main(void)
