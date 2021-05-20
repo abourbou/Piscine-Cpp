@@ -6,19 +6,18 @@
 /*   By: abourbou <abourbou@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 09:14:19 by abourbou          #+#    #+#             */
-/*   Updated: 2021/02/17 11:55:50 by abourbou         ###   ########lyon.fr   */
+/*   Updated: 2021/05/20 16:09:00 by abourbou         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap(void): hit_points(100), max_hit_points(100),
-					energy_points(100), level(1), name("default product"), melee_attack_dmg(30),
+					energy_points(100), max_energy_points(100),
+					level(1), name("default product"), melee_attack_dmg(30),
 					range_attack_dmg(20), armor_dmg_reduction(5)
 {
 	std::cout << "Default constructor FragTrap called" << std::endl;
-	(void)max_energy_points;
-	(void)level;
 }
 
 FragTrap::FragTrap(FragTrap const &cpy)
@@ -42,12 +41,11 @@ FragTrap	&FragTrap::operator=(FragTrap const &cpy)
 }
 
 FragTrap::FragTrap(std::string his_name): hit_points(100), max_hit_points(100),
-					energy_points(100), level(1), name(his_name), melee_attack_dmg(30),
+					energy_points(100), max_energy_points(100), level(1),
+					name(his_name), melee_attack_dmg(30),
 					range_attack_dmg(20), armor_dmg_reduction(5)
 {
 	std::cout << "Constructor FragTrap " << this->name << " called" << std::endl;
-	(void)max_energy_points;
-	(void)level;
 }
 
 FragTrap::~FragTrap(void)
@@ -95,7 +93,7 @@ void	FragTrap::vaulthunter_dot_exe(std::string const &target)
 
 	if (this->energy_points < 25)
 	{
-		std::cout << "FR4G-TP " << this->name << ": Not enought energy to execute attack" << std::endl;
+		std::cout << "Not enought energy to execute attack" << std::endl;
 		return ;
 	}
 	this->energy_points -= 25;
